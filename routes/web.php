@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\petugasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,13 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('index', function () {
     return view('index');
 });
-Route::get('/', function () {
-    return view('/');
-});
+Route::get('dass',[petugasController::class,'dass']);
+Route::post('dass',[petugasController::class,'data']);
+
+
+Route::get('kelas',[petugasController::class,'kelas']);
+Route::get('tambahkelas',[petugasController::class,'tambah']);
+Route::post('tambahkelas',[petugasController::class,'tambahkelas']);
+Route::get('editkelas/(id)',[petugasController::class,'edit']);
+Route::post('editkelas',[petugasController::class,'editkelas']);
