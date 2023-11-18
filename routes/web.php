@@ -15,9 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('index', function () {
-    return view('index');
+Route::get('/', function () {
+    return view('/');
 });
+Route::get('login',[petugasController::class,'login']);
+Route::post('login',[petugasController::class,'ceklogin']);
+
 Route::get('dass',[petugasController::class,'dass']);
 Route::post('dass',[petugasController::class,'data']);
 
@@ -25,5 +28,6 @@ Route::post('dass',[petugasController::class,'data']);
 Route::get('kelas',[petugasController::class,'kelas']);
 Route::get('tambahkelas',[petugasController::class,'tambah']);
 Route::post('tambahkelas',[petugasController::class,'tambahkelas']);
-Route::get('editkelas/(id)',[petugasController::class,'edit']);
-Route::post('editkelas',[petugasController::class,'editkelas']);
+Route::get('editkelas/{id}',[petugasController::class,'edit']);
+Route::post('editkelas/{id}',[petugasController::class,'editkelas']);
+Route::get('hapuskelas/{id}',[petugasController::class,'hapuskelas']);

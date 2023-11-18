@@ -18,9 +18,12 @@
                                         id="dataTables-example">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
-                                                <th>Nama Kelas</th>
-                                                <th>Kopetensi Keahlian</th>
+                                                <th>Nisn</th>
+                                                <th>Nis</th>
+                                                <th>Nama</th>
+                                                <th>Id Kelas</th>
+                                                <th>No Telpon</th>
+                                                <th>Id Spp</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -29,9 +32,12 @@
                                                 @foreach ($data as $item)
                                                     
                                                 <tr>
-                                                    <td>{{$item->id_kelas}}</td>
-                                                    <td>{{$item->nama_kelas}}</td>
-                                                    <td>{{$item->kopetensi_keahlian}}</td>
+                                                    <td>{{$item->}}</td>
+                                                    <td>{{$item->}}</td>
+                                                    <td>{{$item->}}</td>
+                                                    <td>{{$item->}}</td>
+                                                    <td>{{$item->}}</td>
+                                                    <td>{{$item->}}</td>
                                                     <td>
                                                         <a href="{{url('/editkelas/'.$item->id_kelas)}}" class="btn btn-primary"><i class="fa fa-edit "></i> Edit</a>
                                                         <a href="hapuskelas/{{$item->id_kelas}}" class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</a>

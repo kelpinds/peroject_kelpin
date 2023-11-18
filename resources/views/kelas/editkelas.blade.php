@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pengaduan | Masyarakat</title>
+    <title>edit | kelas</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-icons.min.css">
 </head>
@@ -21,17 +21,17 @@
                     @endif
                     @if ($errors->any())
                         <div class="alert alert-success" role="alert">
-                            Silahkan isi semua kolom!!!
+                            hh
                         </div>
                     @endif
                     @foreach ($data as $item)
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form method="POST" >
                         @csrf
 
                         <div class="mb-3">
                             <label for="nama_kelas" class="form-label">Nama Kelas</label>
                             <input type="text" class="form-control" name="nama_kelas" id="nama_kelas" placeholder="nama kelas"
-                            value="{{$item->id_kelas}}">
+                            value="{{$item->nama_kelas}}">
                             @error('nama_kelas')
                                 <div class="form-text">
                                     {{ $message }}
@@ -42,7 +42,7 @@
                         <div class="mb-3">
                             <label for="kopetensi_keahlian" class="form-label">kopetensi keahlian</label>
                             <input type="text" class="form-control" name="kopetensi_keahlian" id="kopetensi_keahlian" placeholder="kopetensi keahlian"
-                            value="{{$item->id_kelas}}">
+                            value="{{$item->kopetensi_keahlian}}">
                             @error('kopetensi_keahlian')
                                 <div class="form-text">
                                     {{ $message }}
@@ -50,7 +50,7 @@
                             @enderror
                             </div>
                         
-                            <button class="btn form-control btn-primary mb-2">Tambah</button>
+                            <button class="btn form-control btn-primary mb-2">simpan</button>
                             <button class="btn form-control btn-outline-success mb-2" type="reset">Batal</button>
                     </form>
                     @endforeach

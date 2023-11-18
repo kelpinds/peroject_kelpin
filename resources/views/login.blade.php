@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-icons.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -19,25 +21,18 @@
                     <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                     <p class="text-white-50 mb-5">Please enter your login and password!</p>
       
-                    <div class="form-outline form-white mb-4">
-                      <input type="email" id="typeEmailX" class="form-control form-control-lg" />
-                      <label class="form-label" for="typeEmailX">Email</label>
-                    </div>
+                    <form action="" method="post" class="mt-5">
+                      @csrf
+                      <div class="mb-3">
+                          <input type="text" id="username" name="username" class="form-control py-2" placeholder="Username">
+                      </div>
+                      <div class="mb-3">
+                          <input type="password" id="password" name="password" class="form-control py-2" placeholder="Password">
+                      </div>
+                      <div class="mb-3">
+                          <button class="btn btn-outline-light form-control">Sign in</button>
+                      </div>
       
-                    <div class="form-outline form-white mb-4">
-                      <input type="password" id="typePasswordX" class="form-control form-control-lg" />
-                      <label class="form-label" for="typePasswordX">Password</label>
-                    </div>
-      
-                    <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
-      
-                    <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
-      
-                  </div>
-      
-                  <div>
-                    <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a>
-                    </p>
                   </div>
       
                 </div>
