@@ -14,4 +14,8 @@ class kelas extends Model
     public $incrementing=false;
     // protected $keyType = "string";
     protected $guarded=[];
+
+    public function kelas(){
+        return $this->hasMany(siswa::class,'id_kelas','id_kelas');
+    }
 }

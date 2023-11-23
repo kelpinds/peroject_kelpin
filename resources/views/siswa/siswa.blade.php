@@ -22,6 +22,7 @@
                                                 <th>Nis</th>
                                                 <th>Nama</th>
                                                 <th>Id Kelas</th>
+                                                <th>Alamat</th>
                                                 <th>No Telpon</th>
                                                 <th>Id Spp</th>
                                                 <th>Aksi</th>
@@ -32,15 +33,16 @@
                                                 @foreach ($data as $item)
                                                     
                                                 <tr>
-                                                    <td>{{$item->}}</td>
-                                                    <td>{{$item->}}</td>
-                                                    <td>{{$item->}}</td>
-                                                    <td>{{$item->}}</td>
-                                                    <td>{{$item->}}</td>
-                                                    <td>{{$item->}}</td>
+                                                    <td>{{$item->nisn}}</td>
+                                                    <td>{{$item->nis}}</td>
+                                                    <td>{{$item->nama}}</td>
+                                                    <td>{{$item->id_kelas}}</td>
+                                                    <td>{{$item->alamat}}</td>
+                                                    <td>{{$item->no_telp}}</td>
+                                                    <td>{{$item->id_spp}}</td>
                                                     <td>
-                                                        <a href="{{url('/editkelas/'.$item->id_kelas)}}" class="btn btn-primary"><i class="fa fa-edit "></i> Edit</a>
-                                                        <a href="hapuskelas/{{$item->id_kelas}}" class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</a>
+                                                        <a href="{{url('/editsiswa/'.$item->nisn)}}" class="btn btn-primary"><i class="fa fa-edit "></i> Edit</a>
+                                                        <a href="hapussiswa/{{$item->nisn}}" class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</a>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -48,7 +50,7 @@
                                             </table>
                                         </div>
                                         
-                                <a class="btn btn-outline-primary" href="{{url('/tambahkelas')}}" role="button">Tambah</a> 
+                                        <a type="button" class="btn btn-primary" href="{{url('/tambahsiswa')}}">Tambah</a>
                                     </div>
                                 </div>
                                 <!--End Advanced Tables -->

@@ -13,4 +13,8 @@ class siswa extends Model
     public $incrementing=false;
     protected $keyType = "string";
     protected $guarded=[];
+
+    public function kelas(){
+        return $this->belongsTo(kelas::class,'id_kelas','id_kelas');
+    }
 }

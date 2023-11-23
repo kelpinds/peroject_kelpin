@@ -57,10 +57,16 @@
                         <a href="#"><i class="fa fa-sitemap" ></i> Data<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">Siswa</a>
+                                <a href="{{url('/siswa')}}">Siswa</a>
                             </li>
                             <li>
-                                <a href="{{url('/kelas')}}">kelas</a>
+                                <a href="{{url('/kelas')}}">Kelas</a>
+                            </li>
+                            <li>
+                                <a href="{{url('/spp')}}">Spp</a>
+                            </li>
+                            <li>
+                                <a href="{{url('/petugas')}}">Petugas</a>
                             </li>
 
                         </ul>

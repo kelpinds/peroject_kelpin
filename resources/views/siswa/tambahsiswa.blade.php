@@ -40,7 +40,7 @@
                         <div class="mb-3">
                             <label for="nis" class="form-label">Nis</label>
                             <input type="text" class="form-control" name="nis" id="nis" placeholder="Nis">
-                            @error('Nis')
+                            @error('nis')
                                 <div class="form-text">
                                     {{ $message }}
                                 </div>
@@ -55,9 +55,13 @@
                                 </div>
                             @enderror
                             </div>
-                        <div class="mb-3">
-                            <label for="id_kelas" class="form-label">Id Kelas</label>
-                            <input type="number" class="form-control" name="id_kelas" id="id_kelas" placeholder="Id Kelas">
+                        <div class="from-group"> 
+                            <label>ID Kelas</label>
+                            <select class="form-control" name="id_kelas" id="id_kelas">
+                                @foreach ($datakelas as $item)
+                                    <option value="{{$item->id_kelas}}">{{$item->nama_kelas}}-{{$item->kopetensi_keahlian}}</option>
+                                @endforeach
+                            </select>
                             @error('id_kelas')
                                 <div class="form-text">
                                     {{ $message }}
@@ -66,8 +70,8 @@
                             </div>
                         <div class="mb-3">
                             <label for="alamat" class="form-label">Alamat</label>
-                            <input type="text" class="form-control" name="lamat" id="nis" placeholder="Nis"> 
-                            @error('Nis')
+                            <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Alamat"> 
+                            @error('alamat')
                                 <div class="form-text">
                                     {{ $message }}
                                 </div>
@@ -82,15 +86,19 @@
                                 </div>
                             @enderror
                             </div>
-                        <div class="mb-3">
-                            <label for="id_spp" class="form-label">Id Spp</label>
-                            <input type="number" class="form-control" name="id_spp" id="id_spp" placeholder="Id Spp">
-                            @error('id_spp')
-                                <div class="form-text">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                            </div>
+                            <div class="from-group"> 
+                                <label>ID Spp</label>
+                                <select class="form-control" name="id_spp" id="id_spp">
+                                    @foreach ($dataspp as $item)
+                                        <option value="{{$item->id_spp}}">{{$item->id_spp}}-{{$item->tahun}}-{{$item->nominal}}</option>
+                                    @endforeach
+                                </select>
+                                @error('id_spp')
+                                    <div class="form-text">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                                </div><br>
                         
                             <button class="btn form-control btn-primary mb-2">Tambah</button>
                             <button class="btn form-control btn-outline-success mb-2" type="reset">Batal</button>
