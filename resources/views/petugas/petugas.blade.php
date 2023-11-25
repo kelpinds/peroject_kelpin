@@ -9,7 +9,7 @@
                         <!-- Advanced Tables -->
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                Advanced Tables
+                                Data Petugas
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">

@@ -15,14 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('/');
-});
+
+Route::get('logout',[petugasController::class,'logout']);
+
 Route::get('login',[petugasController::class,'login']);
 Route::post('login',[petugasController::class,'ceklogin']);
 
 Route::get('dass',[petugasController::class,'dass']);
 Route::post('dass',[petugasController::class,'data']);
+
+Route::get('entri',[petugasController::class,'entri']);
+Route::post('entri',[petugasController::class,'dataentri']);
 
 
 Route::get('kelas',[petugasController::class,'kelas']);

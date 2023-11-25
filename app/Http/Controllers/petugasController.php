@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\kelas;
+use App\Models\pembayaran;
 use App\Models\petugas;
 use App\Models\siswa;
 use App\Models\spp;
@@ -57,7 +58,7 @@ class petugasController extends Controller
         if($s->exists()){
             session([
                 'username'=>$request->input('username'),
-                'password'=>$request->input('password')
+                'password'=>$request->input('password') 
             ]);
             return redirect('dass');
         }
@@ -67,7 +68,7 @@ class petugasController extends Controller
         return view("siswa.siswa",['data'=>$cek->all()]);
     }
     public function tambahs(){
-        $k = new kelas();
+        $k = new kelas();  
         $s = new spp();
         return view("siswa.tambahsiswa",['datakelas'=>$k->all(),'dataspp'=>$s->all()]);
     }
@@ -181,5 +182,27 @@ class petugasController extends Controller
     public function hapuspg($id){
         $e = petugas::where('username',$id)->delete();
         return back();
+    }
+    public function entri(){
+        $cek = new pembayaran();
+        return view("Entripembayaran",['data'=>$cek->all()]);
+    }
+    public function dataentri(Request $request){
+        $k =new pembayaran;
+        $k->create([
+            'id_petugas'=>session('id_petugas')->id_petugas,
+            'nisn'=>$request->input('nisn'),
+            'tgl_bayar'=>date('y-m-d'),
+            'bulan_bayar'=>$request->input('bulan_bayar'),
+            'tahun_bayar'=>$request->input('tahun_bayar'),
+            'id_spp'=>$request->input('id_spp'),
+            'jumlah_bayar'=>$request->input('jumlah_bayar'),
+        ]);
+        return back()->with('pesan','data berhasil ditambahkan');
+        
+    }
+    public function logout(){
+        session()->flush();
+        return  redirect('login');
     }
 }

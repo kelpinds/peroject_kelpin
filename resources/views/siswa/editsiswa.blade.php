@@ -96,7 +96,7 @@
                                 <label>ID Spp</label>
                                 <select class="form-control" name="id_spp" id="id_spp">
                                     @foreach ($dataspp as $itm)
-                                        <option value="{{$item->id_spp}}">{{$itm->id_spp}}-{{$item->tahun}}-{{$itm->nominal}}</option>
+                                        <option value="{{$item->id_spp}}">{{$item->tahun}}-{{$itm->nominal}}</option>
                                     @endforeach
                                 </select>
                                 @error('id_spp')

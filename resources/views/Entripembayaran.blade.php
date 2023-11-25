@@ -38,54 +38,24 @@
                             </div>
                         
                         <div class="mb-3">
-                            <label for="nis" class="form-label">Nis</label>
-                            <input type="text" class="form-control" name="nis" id="nis" placeholder="Nis">
-                            @error('nis')
+                            <label for="bulan_dibayar" class="form-label">Bulan Bayar</label>
+                            <input type="text" class="form-control" name="bulan_dibayar" id="bulan_dibayar" placeholder="Bulan Bayar">
+                            @error('bulan_bayar')
                                 <div class="form-text">
                                     {{ $message }}
                                 </div>
                             @enderror
                             </div>
                         <div class="mb-3">
-                            <label for="nama" class="form-label">Nama</label>
-                            <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama">
-                            @error('nama')
+                            <label for="tahun_dibayar" class="form-label">Tahun Bayar</label>
+                            <input type="text" class="form-control" name="tahun_dibayar" id="tahun_dibayar" placeholder="Tahun Bayar">
+                            @error('tahun_bayar')
                                 <div class="form-text">
                                     {{ $message }}
                                 </div>
                             @enderror
                             </div>
-                        <div class="from-group"> 
-                            <label>ID Kelas</label>
-                            <select class="form-control" name="id_kelas" id="id_kelas">
-                                @foreach ($datakelas as $item)
-                                    <option value="{{$item->id_kelas}}">{{$item->nama_kelas}}-{{$item->kopetensi_keahlian}}</option>
-                                @endforeach
-                            </select>
-                            @error('id_kelas')
-                                <div class="form-text">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                            </div>
-                        <div class="mb-3">
-                            <label for="alamat" class="form-label">Alamat</label>
-                            <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Alamat"> 
-                            @error('alamat')
-                                <div class="form-text">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                            </div>
-                        <div class="mb-3">
-                            <label for="no_telp" class="form-label">No Telpon</label>
-                            <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="No Telpon">
-                            @error('no_telp')
-                                <div class="form-text">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                            </div>
+                        
                             <div class="from-group"> 
                                 <label>ID Spp</label>
                                 <select class="form-control" name="id_spp" id="id_spp">
@@ -98,7 +68,16 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
-                                </div><br>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="jumlah_bayar" class="form-label">Jumlah Bayar</label>
+                                    <input type="text" class="form-control" name="jumlah_bayar" id="jumlah_bayar" placeholder="Jumlah Bayar">
+                                    @error('jumlah_bayar')
+                                        <div class="form-text">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                    </div><br>
                         
                             <button class="btn form-control btn-primary mb-2">Tambah</button>
                             <button class="btn form-control btn-outline-success mb-2" type="reset">Batal</button>

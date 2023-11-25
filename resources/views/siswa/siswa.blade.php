@@ -9,7 +9,7 @@
                         <!-- Advanced Tables -->
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                Advanced Tables
+                                Data Siswa
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
@@ -36,10 +36,10 @@
                                                     <td>{{$item->nisn}}</td>
                                                     <td>{{$item->nis}}</td>
                                                     <td>{{$item->nama}}</td>
-                                                    <td>{{$item->id_kelas}}</td>
+                                                    <td>{{$item->kelas->nama_kelas}}-{{$item->Kelas->kopetensi_keahlian}}</td>
                                                     <td>{{$item->alamat}}</td>
                                                     <td>{{$item->no_telp}}</td>
-                                                    <td>{{$item->id_spp}}</td>
+                                                    <td>{{$item->Spp->tahun}}-{{$item->Spp->nominal}}</td>
                                                     <td>
                                                         <a href="{{url('/editsiswa/'.$item->nisn)}}" class="btn btn-primary"><i class="fa fa-edit "></i> Edit</a>
                                                         <a href="hapussiswa/{{$item->nisn}}" class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</a>

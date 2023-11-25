@@ -13,4 +13,7 @@ class spp extends Model
     public $incrementing=false;
     // protected $keyType = "string";
     protected $guarded=[];
+    public function spp(){
+        return $this->hasMany(spp::class,'id_spp','id_spp');
+    }
 }

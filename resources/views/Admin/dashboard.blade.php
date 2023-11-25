@@ -9,7 +9,7 @@
                             <!-- Advanced Tables -->
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    Advanced Tables
+                                    haha
                                 </div>
                                 <div class="panel-body">
                                     <div class="table-responsive">
@@ -17,16 +17,30 @@
                                             id="dataTables-example">
                                             <thead>
                                                 <tr>
-                                                    <th>Rendering engine</th>
-                                                    <th>Browser</th>
-                                                    <th>Platform(s)</th>
-                                                    <th>Engine version</th>
-                                                    <th>CSS grade</th>
+                                                    <th>No</th>
+                                                    <th>ID Petugas</th>
+                                                    <th>nisn</th>
+                                                    <th>Tanggal di Bayar</th>
+                                                    <th>Bulan di Bayar</th>
+                                                    <th>Tahun di Bayar</th>
+                                                    <th>ID Spp</th>
+                                                    <th>Jumlah Di Bayar</th>
+
                                                 </tr>
                                             </thead>
                                             <tbody>
-
-
+                                                @foreach ($data as $item)
+                                                    
+                                                
+                                                <td>{{$item>id_pembayaran}}</td>
+                                                <td>{{$item>id_petugas}}</td>
+                                                <td>{{$item>nisn}}</td>
+                                                <td>{{$item>tgl_dibayar}}</td>
+                                                <td>{{$item>bulan_dibayar}}</td>
+                                                <td>{{$item>tahun_dibayar}}</td>
+                                                <td>{{$item>id_spp}}</td>
+                                                <td>{{$item>jumlah_bayar}}</td>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
