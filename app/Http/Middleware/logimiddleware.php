@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class middlewarerole
+class logimiddleware
 {
     /**
      * Handle an incoming request.
@@ -14,13 +14,12 @@ class middlewarerole
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
-
-
+    {
         {
-            if (session('datapetugas')->level !== 'admin') {
-                return back();
+            if (!session('dataSiswa') && !session('dataPetugas')) {
+                return redirect('login');
             }
             return $next($request);
         }
-    
+    }
 }
